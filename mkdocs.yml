@@ -1,0 +1,44 @@
+site_name: LCU Script Flow Docs
+site_url: https://fastboot3ds.github.io/LCU-Script-Flow-Docs/
+theme:
+  name: material
+  palette:
+    scheme: slate        
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - navigation.sections
+    - content.code.copy
+    - search.highlight
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: sf
+          class: language-sf
+          format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: scriptflow
+          class: language-sf
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - javascripts/shiki-sf.js
+
+nav:
+  - Home: index.md
+  - About:
+      - about/index.md
+  - The Basics:
+      - basics/index.md
+      - Data Types: basics/types.md
+      - Syntax: basics/syntax.md
+      - Keywords: basics/keywords.md
+      - Variables & Scopes: basics/variables.md
+      - States & Execution Flow: basics/states.md
+  - Specifics:
+      - specifics/index.md
+      - Arrays: specifics/arrays.md
+      - CityArrays: specifics/city-arrays.md
+      - Characters: specifics/characters.md
