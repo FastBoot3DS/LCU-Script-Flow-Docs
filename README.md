@@ -4,7 +4,14 @@ Documentation for **Script Flow** (`.sf`), the scripting language used in **LEGO
 
 ## Local Setup
 
-Requires **Python 3.8+**.
+Requires **Python 3.8+** and **Git**.
+
+First, clone the repository (or your fork) and `cd` into it:
+
+```bash
+git clone https://github.com/FastBoot3DS/LCU-Script-Flow-Docs.git
+cd LCU-Script-Flow-Docs
+```
 
 ### Windows (PowerShell)
 

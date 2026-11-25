@@ -51,15 +51,23 @@ Make sure your virtual environment is active (see [README.md](README.md#local-se
 
 ## Submitting Changes
 
-1. **Fork** the [repository](https://github.com/FastBoot3DS/LCU-Script-Flow-Docs) on GitHub and clone your fork locally.
+1. **Fork** the [repository](https://github.com/FastBoot3DS/LCU-Script-Flow-Docs) on GitHub, then clone your fork and `cd` into the folder:
+   ```bash
+   git clone https://github.com/<your-username>/LCU-Script-Flow-Docs.git
+   cd LCU-Script-Flow-Docs
+   ```
 2. **Create a branch** for your changes:
    ```bash
    git checkout -b docs/your-topic
    ```
-3. **Commit and push** your branch after running `mkdocs build --strict`:
+3. **Make your edits and test locally** (from inside the `LCU-Script-Flow-Docs` folder):
+   ```bash
+   mkdocs build --strict
+   ```
+4. **Commit and push** your branch:
    ```bash
    git add .
    git commit -m "Add docs for <topic>"
    git push -u origin docs/your-topic
    ```
-4. **Open a Pull Request** against `main` on GitHub describing what you added or updated.
+5. **Open a Pull Request** on GitHub from your branch into `FastBoot3DS/LCU-Script-Flow-Docs` (`main`), describing what you added or updated.
