@@ -46,12 +46,14 @@ CityArray targets(CityArray_Create("MissionTargets"));
 ### `CityArray_CreateCopy()`
 ```sf
 CityArray CityArray_CreateCopy(CityArray source);
+CityArray source.CreateCopy();
 ```
 Duplicates an existing `CityArray`.
 
 ### `CityArray_Add()`
 ```sf
 CityArray_Add(CityArray arr, Any value);
+arr.Add(Any value);
 ```
 Appends `value` to `arr`.
 
@@ -62,30 +64,35 @@ CityArray_Add(targets, "TargetA");
 ### `CityArray_Get()`
 ```sf
 Any CityArray_Get(CityArray arr, Number index);
+Any arr.Get(Number index);
 ```
 Returns the element at `index`.
 
 ### `CityArray_Set()`
 ```sf
 CityArray_Set(CityArray arr, Number index, Any value);
+arr.Set(Number index, Any value);
 ```
 Overwrites the element at `index` with `value`.
 
 ### `CityArray_Remove()`
 ```sf
 CityArray_Remove(CityArray arr, Number index);
+arr.Remove(Number index);
 ```
 Removes the element at `index`.
 
 ### `CityArray_Size()`
 ```sf
 Number CityArray_Size(CityArray arr);
+Number arr.Size();
 ```
 Returns the number of elements currently in `arr`.
 
 ### `CityArray_Clear()`
 ```sf
 CityArray_Clear(CityArray arr);
+arr.Clear();
 ```
 Removes all elements from `arr`.
 

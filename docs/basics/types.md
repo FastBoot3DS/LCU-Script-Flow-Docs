@@ -8,7 +8,7 @@
 | `Bool` | `3` | `SVarBool` | `true` (1) or `false` (0) |
 | `Timer` | `4` | `SVarTimer` | Countdown / elapsed timer |
 | `Text` | `5` | `SVarText` | String literal / localization key |
-| `Hash` | `6` | `SVarHash` | 32-bit FNV-1 hashed identifier |
+| `Hash` | `6` | `SVarHash` | 32-bit FNV-1 hashed identifier (`Text` strings convert to `Hash` automatically) |
 | `Position` | `12` | `SVarPos` | 3D world vector `VuVec: X, Y, Z` |
 | `Script` | `14` | `SVarScript` | Handle to a spawned `ScriptContext` |
 | `Array` | `27` | `SVarArray` | Typed dynamic array, `Max 255 items` (0–255 — the 256th item wraps uint8_t back to 0) |

@@ -11,7 +11,7 @@
       highlighterPromise = (async () => {
         const [{ createHighlighter }, grammarRes] = await Promise.all([
           import("https://esm.sh/shiki@1.24.4"),
-          fetch(baseUrl),
+          fetch(baseUrl, { cache: "no-cache" }),
         ]);
         const sfGrammar = await grammarRes.json();
         return createHighlighter({

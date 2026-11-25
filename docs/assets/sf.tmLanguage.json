@@ -62,7 +62,7 @@
             }
         },
         "variable-declarations": {
-            "match": "(?:\\b(?i:(Global|Extern|Debug))\\s+)?\\b(?i:(Number|Integer|Bool|Timer|Text|Hash|Position|Array|Reference|Script|Job|Character|Vehicle|Locator|LocatorSet|Area|WorldArea|WorldLevel|Gizmo|HotSpot|Object|NaviMap|GridlockMap|GridlockToggleLayer|GLToggleLayer|SoundPlaceable|Sound|Speech|SpeechPack|Track|TrackBank|Message|CityArray|CityObjective|AttackManager|Gadget|AddOnHandle|MechEventListener|FootStepsMap|SVar|SVarLevel|SVarArray))\\b\\s+([A-Za-z_][A-Za-z0-9_]*)",
+            "match": "(?:\\b(?i:(Global|Extern|Debug))\\s+)?\\b(?i:(Number|Integer|Bool|Timer|Text|Hash|Position|Array|Reference|Script|Job|Character|Vehicle|Locator|LocatorSet|Area|WorldArea|WorldLevel|Gizmo|HotSpot|Object|NaviMap|GridlockMap|GridlockToggleLayer|GLToggleLayer|SoundPlaceable|Sound|SoundListener|Speech|SpeechPack|SpeechStream|Track|TrackBank|Message|CityArray|CityObjective|AttackManager|Gadget|AddOnHandle|MechEventListener|FootStepsMap|SVar|SVarLevel|SVarArray))\\b\\s+([A-Za-z_][A-Za-z0-9_]*)\\b(?!\\s*\\((?:\\s*\\)|\\s*(?i:Number|Integer|Bool|Timer|Text|Hash|Position|Array|Reference|Script|Job|Character|Vehicle|Locator|LocatorSet|Area|WorldArea|WorldLevel|Gizmo|HotSpot|Object|NaviMap|GridlockMap|GridlockToggleLayer|GLToggleLayer|SoundPlaceable|Sound|SoundListener|Speech|SpeechPack|SpeechStream|Track|TrackBank|Message|CityArray|CityObjective|AttackManager|Gadget|AddOnHandle|Any)\\b))",
             "captures": {
                 "1": { "name": "storage.modifier.sf" },
                 "2": { "name": "support.type.sf" },
