@@ -1,0 +1,157 @@
+{
+    "name": "LEGO City Undercover Scripting Flow",
+    "scopeName": "source.sf",
+    "patterns": [
+        { "include": "#comments" },
+        { "include": "#strings" },
+        { "include": "#hash-literals" },
+        { "include": "#keywords" },
+        { "include": "#storage-modifiers" },
+        { "include": "#state-declaration" },
+        { "include": "#function-declaration" },
+        { "include": "#variable-declarations" },
+        { "include": "#types" },
+        { "include": "#constants" },
+        { "include": "#named-parameters" },
+        { "include": "#object-access" },
+        { "include": "#member-calls" },
+        { "include": "#action-calls" },
+        { "include": "#numbers" },
+        { "include": "#operators" },
+        { "include": "#variable-references" }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.sf",
+                    "match": "//.*$"
+                },
+                {
+                    "name": "comment.block.sf",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.sf",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.sf",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "hash-literals": {
+            "name": "constant.language.hash.sf",
+            "match": "#[A-Za-z_][A-Za-z0-9_]*"
+        },
+        "state-declaration": {
+            "match": "\\b(?i:State)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\(",
+            "captures": {
+                "1": { "name": "entity.name.class.state.sf" }
+            }
+        },
+        "function-declaration": {
+            "match": "\\b(?i:Function)\\s+([A-Za-z_][A-Za-z0-9_]*)\\s*\\(",
+            "captures": {
+                "1": { "name": "entity.name.function.sf" }
+            }
+        },
+        "variable-declarations": {
+            "match": "(?:\\b(?i:(Global|Extern|Debug))\\s+)?\\b(?i:(Number|Integer|Bool|Timer|Text|Hash|Position|Array|Reference|Script|Job|Character|Vehicle|Locator|LocatorSet|Area|WorldArea|WorldLevel|Gizmo|HotSpot|Object|NaviMap|GridlockMap|GridlockToggleLayer|GLToggleLayer|SoundPlaceable|Sound|SoundListener|Speech|SpeechPack|SpeechStream|Track|TrackBank|Message|CityArray|CityObjective|AttackManager|Gadget|AddOnHandle|MechEventListener|FootStepsMap|SVar|SVarLevel|SVarArray))\\b\\s+([A-Za-z_][A-Za-z0-9_]*)\\b(?!\\s*\\((?:\\s*\\)|\\s*(?i:Number|Integer|Bool|Timer|Text|Hash|Position|Array|Reference|Script|Job|Character|Vehicle|Locator|LocatorSet|Area|WorldArea|WorldLevel|Gizmo|HotSpot|Object|NaviMap|GridlockMap|GridlockToggleLayer|GLToggleLayer|SoundPlaceable|Sound|SoundListener|Speech|SpeechPack|SpeechStream|Track|TrackBank|Message|CityArray|CityObjective|AttackManager|Gadget|AddOnHandle|Any)\\b))",
+            "captures": {
+                "1": { "name": "storage.modifier.sf" },
+                "2": { "name": "support.type.sf" },
+                "3": { "name": "variable.other.declaration.sf" }
+            }
+        },
+        "named-parameters": {
+            "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*(?=:?=)",
+            "captures": {
+                "1": { "name": "variable.parameter.sf" }
+            }
+        },
+        "object-access": {
+            "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\.)",
+            "captures": {
+                "1": { "name": "variable.other.object.sf" }
+            }
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.sf",
+                    "match": "\\b(?i:State|Function|returns|Conditions|Actions|if|elseif|else|while|goto|gosub|next|previous|wait|return)\\b"
+                },
+                {
+                    "name": "keyword.operator.logical.sf",
+                    "match": "\\b(?i:AND|OR|NOT)\\b"
+                }
+            ]
+        },
+        "storage-modifiers": {
+            "name": "storage.modifier.sf",
+            "match": "\\b(?i:Global|Extern|Debug)\\b"
+        },
+        "types": {
+            "name": "support.type.sf",
+            "match": "\\b(?i:Number|Integer|Bool|Timer|Text|Hash|Position|Array|Reference|Script|Job|Character|Vehicle|Locator|LocatorSet|Area|WorldArea|WorldLevel|Gizmo|HotSpot|Object|NaviMap|GridlockMap|GridlockToggleLayer|GLToggleLayer|SoundPlaceable|Sound|SoundListener|Speech|SpeechPack|SpeechStream|Track|TrackBank|Message|CityArray|CityObjective|AttackManager|Gadget|AddOnHandle|MechEventListener|FootStepsMap|SVar|SVarLevel|SVarArray)\\b"
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.boolean.sf",
+                    "match": "\\b(?i:true|false)\\b"
+                }
+            ]
+        },
+        "member-calls": {
+            "match": "\\.\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\()",
+            "captures": {
+                "1": { "name": "entity.name.function.member.sf" }
+            }
+        },
+        "action-calls": {
+            "match": "\\b([A-Za-z_][A-Za-z0-9_]*)\\s*(?=\\()",
+            "captures": {
+                "1": { "name": "entity.name.function.action.sf" }
+            }
+        },
+        "numbers": {
+            "name": "constant.numeric.sf",
+            "match": "[\\-\\u2013]?\\b\\d+(\\.\\d+)?([eE][\\+\\-]?\\d+)?\\b"
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.assignment.sf",
+                    "match": ":="
+                },
+                {
+                    "name": "keyword.operator.comparison.sf",
+                    "match": "==|!=|<=|>=|<|>"
+                },
+                {
+                    "name": "keyword.operator.assignment.sf",
+                    "match": "="
+                },
+                {
+                    "name": "keyword.operator.arithmetic.sf",
+                    "match": "\\+|\\-|\\*|\\/|\\^|\\%"
+                },
+                {
+                    "name": "keyword.operator.logical.sf",
+                    "match": "&&|\\|\\||!"
+                }
+            ]
+        },
+        "variable-references": {
+            "match": "\\b(?!\\b(?i:State|Function|returns|Conditions|Actions|if|elseif|else|while|goto|wait|return|AND|OR|NOT|Global|Extern|Debug|Number|Bool|Timer|Text|Hash|Position|Script|Job|Character|Vehicle|Locator|Area|WorldLevel|Gizmo|HotSpot|NaviMap|GridlockMap|GridlockToggleLayer|GLToggleLayer|SoundPlaceable|Sound|Speech|SpeechPack|Track|TrackBank|Message|CityArray|CityObjective|AttackManager|Gadget|true|false)\\b)([A-Za-z_][A-Za-z0-9_]*)\\b(?!\\s*\\()",
+            "name": "variable.other.readwrite.sf"
+        }
+    }
+}
